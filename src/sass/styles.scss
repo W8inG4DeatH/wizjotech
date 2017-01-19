@@ -38,8 +38,12 @@ h2 {
     font-size: 2.4rem;
 }
 h3 {
+	font-weight: bold;
+    font-size: 1.80rem;
+}
+h4 {
 	font-weight: bolder;
-    font-size: 1.86rem;
+    font-size: 1.80rem;
 }
 
 li {
@@ -96,6 +100,15 @@ underline {
 {
 	color: $color-wizjotech;
 	padding: 10px;
+}
+.download-element
+{
+	line-height: 50px;
+	color: $color-wizjotech;
+}
+.download-element-active
+{
+	@include border-radius($color-wizjotech);
 }
 
 .bg-container

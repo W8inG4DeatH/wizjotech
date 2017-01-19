@@ -5,38 +5,33 @@
     app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 
         $routeProvider
-            .when('/home', {
-                controller: 'homeController',
-                templateUrl: 'views/home.html',
-                label: 'Witaj'
+            .when('/monitory', {
+                controller: 'monitoryController',
+                templateUrl: 'views/monitory.html',
+                label: 'Monitory'
             })
-            .when('/firma', {
-                controller: 'firmaController',
-                templateUrl: 'views/firma.html',
-                label: 'Firma'
+            .when('/telewizory-i-kino-domowe', {
+                controller: 'telewizoryiKinoDomoweController',
+                templateUrl: 'views/monitory.html',
+                label: 'Telewizory i kino domowe'
             })
-            .when('/oferta/:categoryName', {
-                controller: 'ofertaController',
-                templateUrl: 'views/oferta.html',
-                label: 'Oferta'
+            .when('/telewizory-hotelowe', {
+                controller: 'telewizoryHoteloweController',
+                templateUrl: 'views/monitory.html',
+                label: 'Telewizory hotelowe'
             })
-            .when('/oferta', {
-                controller: 'ofertaController',
-                templateUrl: 'views/oferta.html',
-                label: 'Oferta'
+            .when('/projektory', {
+                controller: 'projektoryController',
+                templateUrl: 'views/monitory.html',
+                label: 'Projektory'
             })
-            .when('/pobierz', {
-                controller: 'pobierzController',
-                templateUrl: 'views/pobierz.html',
-                label: 'Pobierz'
-            })
-            .when('/kontakt', {
-                controller: 'kontaktController',
-                templateUrl: 'views/kontakt.html',
-                label: 'Kontakt'
+            .when('/urzadzenia-wielofunkcyjne', {
+                controller: 'urzadzeniaWielofunkcyjneController',
+                templateUrl: 'views/monitory.html',
+                label: 'Urządzenia wielofunkcyjne'
             })
             .otherwise({
-                redirectTo: '/home'
+                redirectTo: '/monitory'
             });            
 
         $locationProvider
@@ -44,13 +39,40 @@
             
     }]);
  
-    app.controller('myController', ['$scope', '$http', '$window', '$location', '$anchorScroll', 'mainService', 'getWWWData', function($scope, $http, $window, $location, $anchorScroll, mainService, getWWWData) {
+    app.controller('myController', ['$rootScope', '$scope', '$http', '$window', '$location', '$anchorScroll', 'mainService', 'getWWWData', function($rootScope, $scope, $http, $window, $location, $anchorScroll, mainService, getWWWData) {
 
-        $scope.activeBG = 1;
+        $scope.activeOffer = 0;
 
         $(window).load(function() {
+            $('#bg-image-2').hide();
+            $('#bg-image-3').hide();
             $('.siteLoader').hide();
             mainService.StartTooltip();
+
+            $(window).scroll(function() {
+
+                var windowElement = $(window);
+                var windowScrollTop = windowElement.scrollTop();
+                var siteOfertaTopOffset = $('#site-oferta').offset().top - windowScrollTop;
+                var sitePobierzTopOffset = $('#site-pobierz').offset().top - windowScrollTop;
+                var bgImage1 = $('#bg-image-1');
+                var bgImage2 = $('#bg-image-2');
+                var bgImage3 = $('#bg-image-3');
+
+                if (sitePobierzTopOffset <= 0) {
+                    bgImage1.hide();
+                    bgImage2.hide();
+                    bgImage3.show();
+                } else if (siteOfertaTopOffset <= 0) {
+                    bgImage1.hide();
+                    bgImage2.show();
+                    bgImage3.hide();
+                } else {
+                    bgImage1.show();
+                    bgImage2.hide();
+                    bgImage3.hide();
+                }
+            });
         });
 
         $( window ).resize(function() {
@@ -78,52 +100,38 @@
 
     }]);
 
-    //////////
-    // HOME //
-    //////////
-
-    app.controller('homeController', ['$scope', 'mainService', function($scope, mainService){
-
-        angular.element(document).ready(function() {
-
-        });
-
-    }]);
-
     ////////////
     // OFERTA //
-    ////////////  
+    ////////////
 
-    app.controller('ofertaController', ['$scope', '$routeParams', 'mainService', function($scope, $routeParams, mainService){
-
+    app.controller('monitoryController', ['$scope', 'mainService', function($scope, mainService){
         angular.element(document).ready(function() {
-            //$scope.Animateprodukty();
+            $scope.activeOffer = 1;
         });
-
     }]);
 
-    /////////////
-    // POBIERZ //
-    /////////////
-
-    app.controller('pobierzController', ['$scope', 'mainService', function($scope, mainService){
-
+    app.controller('telewizoryiKinoDomoweController', ['$scope', 'mainService', function($scope, mainService){
         angular.element(document).ready(function() {
-
+            $scope.activeOffer = 2;
         });
-
     }]);
 
-    /////////////
-    // KONTAKT //
-    /////////////
-
-    app.controller('kontaktController', ['$scope', 'mainService', function($scope, mainService){
-
+    app.controller('telewizoryHoteloweController', ['$scope', 'mainService', function($scope, mainService){
         angular.element(document).ready(function() {
-
+            $scope.activeOffer = 3;
         });
+    }]);
 
+    app.controller('projektoryController', ['$scope', 'mainService', function($scope, mainService){
+        angular.element(document).ready(function() {
+            $scope.activeOffer = 4;
+        });
+    }]);
+
+    app.controller('urzadzeniaWielofunkcyjneController', ['$scope', 'mainService', function($scope, mainService){
+        angular.element(document).ready(function() {
+            $scope.activeOffer = 5;
+        });
     }]);
 
 })();;

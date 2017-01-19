@@ -16,13 +16,13 @@
 <body ng-controller="myController">
 
     <div class="bg-container">
-        <img ng-show="activeBG == 1" class="bg-image" src="img/bg_1.jpg" alt="BG 1">
-        <img ng-show="activeBG == 2" class="bg-image" src="img/bg_2.jpg" alt="BG 2">
-        <img ng-show="activeBG == 3" class="bg-image" src="img/bg_3.jpg" alt="BG 3">        
+        <img id="bg-image-1" class="bg-image" src="img/bg_1.jpg" alt="BG 1">
+        <img id="bg-image-2" class="bg-image" src="img/bg_2.jpg" alt="BG 2">
+        <img id="bg-image-3" class="bg-image" src="img/bg_3.jpg" alt="BG 3">        
     </div>
 
     <header class="container">
-        <div class="row">
+        <nav class="row">
             <div ng-click="ScrollSite('site-firma')" class="col-xs-12 col-sm-2 text-center menu-element cursor-pointer">
                 <h2>FIRMA</h2>
             </div>
@@ -38,7 +38,7 @@
             <div ng-click="ScrollSite('site-kontakt')" class="col-xs-12 col-sm-2 text-center menu-element cursor-pointer">
                 <h2>KONTAKT</h2>
             </div>
-        </div>
+        </nav>
     </header>
 
     <div ng-view></div>
