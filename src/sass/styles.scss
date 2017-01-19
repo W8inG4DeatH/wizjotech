@@ -1,6 +1,6 @@
 @import "mixins";
 
-$color-sharp: #d82c38;
+$color-wizjotech: #e67817;
 $color-global: #555555; 
 $color-medium: #a0a0a0;
 $color-light: #e8e8e8;
@@ -14,11 +14,12 @@ html {
 }
 
 body { 
-	font-family: 'Georgia', 'Arial', serif;
-	color: $color-black;
-    font-size: 1.2rem; 	// = 10px
-    @include link-colors($color-black,$color-black,$color-black,$color-black);
-    background-color: #f4f4f4;
+	font-family: 'Advent Pro', sans-serif;
+	color: $color-white;
+    font-size: 1.68rem; 	// = 14px
+    line-height: 2.6rem;
+    @include link-colors($color-wizjotech,$color-wizjotech,$color-light,$color-wizjotech);
+    background-color: #000000;
 }
 ul, ol {
   list-style: none;
@@ -31,6 +32,14 @@ ul, ol {
 
 h1 {
 	font-size: 2.6rem;
+}
+h2 {
+	font-weight: bold;
+    font-size: 2.4rem;
+}
+h3 {
+	font-weight: bolder;
+    font-size: 1.86rem;
 }
 
 li {
@@ -60,34 +69,41 @@ underline {
 	@include prefix(transform, rotate(270deg), webkit ms);
 }
 
+.sector
+{
+	padding: 7% 0 7% 0;
+}
+ 
+.sector-white
+{
+	color: $color-black;
+	background-color: $color-white;
+}
+
 .container {
-	position: relative;
-	width: 98%;
-	margin-top: 20px;
-	margin-bottom: 20px;
+	padding: 20px 2%;
 }
 
 .row {
-	width: 94%;
-	margin-top: 15px;
-	margin-right: 2%;
-	margin-bottom: 15px;
-	margin-left: 2%;
+	padding: 20px 2%;
 }
 
 .cursor-pointer {
 	cursor: pointer;
 }
-.position-relative {
-	position: relative;
+
+.menu-element
+{
+	color: $color-wizjotech;
+	padding: 10px;
 }
-.position-absolute {
-	position: absolute;
+
+.bg-container
+{
+	z-index: -1;
+	position: fixed;
 	top: 0;
 }
-
-
-
 
 
 /////////////////////////////////////////////////////////////
