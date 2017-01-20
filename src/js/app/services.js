@@ -60,7 +60,7 @@
                 $(myTag).append(mySpan);
                 if (fade) {
                     mySpan.classList.add('animation-1');                    
-                }
+                } 
                 i++;
                 if (i >= myChars.length) {
                     clearInterval(myTimer);

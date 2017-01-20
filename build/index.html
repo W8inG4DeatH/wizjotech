@@ -16,26 +16,24 @@
 <body ng-controller="myController">
 
     <div class="bg-container">
-        <img id="bg-image-1" class="bg-image" src="img/bg_1.jpg" alt="BG 1">
-        <img id="bg-image-2" class="bg-image" src="img/bg_2.jpg" alt="BG 2">
-        <img id="bg-image-3" class="bg-image" src="img/bg_3.jpg" alt="BG 3">        
+        <img class="bg-image" src="img/bg_1.jpg" alt="BG 1">
     </div>
 
     <header class="container">
         <nav class="row">
-            <div ng-click="ScrollSite('site-firma')" class="col-xs-12 col-sm-2 text-center menu-element cursor-pointer">
+            <div ng-click="ScrollSite('site-firma')" class="col-xs-12 col-md-2 text-center menu-element cursor-pointer">
                 <h2>FIRMA</h2>
             </div>
-            <div ng-click="ScrollSite('site-oferta')" class="col-xs-12 col-sm-2 text-center menu-element cursor-pointer">
+            <div ng-click="ScrollSite('site-oferta')" class="col-xs-12 col-md-2 text-center menu-element cursor-pointer">
                 <h2>OFERTA</h2>
             </div>
-            <div class="col-xs-12 col-sm-4 text-center menu-element">
-                <a href="http://www.wizjotech.pl"><img src="img/logo.png" class="img-responsive" alt="Logo Wizjotech"></a>
+            <div class="col-xs-12 col-md-4 text-center menu-element">
+                <a href="http://www.wizjotech.pl"><img src="img/logo.png" alt="Logo Wizjotech"></a>
             </div>
-            <div ng-click="ScrollSite('site-pobierz')" class="col-xs-12 col-sm-2 text-center menu-element cursor-pointer">
+            <div ng-click="ScrollSite('site-pobierz')" class="col-xs-12 col-md-2 text-center menu-element cursor-pointer">
                 <h2>POBIERZ</h2>
             </div>
-            <div ng-click="ScrollSite('site-kontakt')" class="col-xs-12 col-sm-2 text-center menu-element cursor-pointer">
+            <div ng-click="ScrollSite('site-kontakt')" class="col-xs-12 col-md-2 text-center menu-element cursor-pointer">
                 <h2>KONTAKT</h2>
             </div>
         </nav>
@@ -51,9 +49,9 @@
         </div>
     </footer>
 
-    <div class="siteLoader" style="position:fixed; left:0; top:0; background-color:#e8e8e8; width:100%; height:100%; z-index:99999;">
+    <div class="siteLoader" style="position:fixed; left:0; top:0; background-color:#111111; width:100%; height:100%; z-index:99999;">
         <div style="position:absolute; top:50%; left:50%; margin-left:-50px; margin-right:-50px;">
-            <img src="img/ring.gif">
+            <img src="img/ripple.gif">
         </div>
     </div>
 

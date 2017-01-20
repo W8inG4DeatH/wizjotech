@@ -1,6 +1,6 @@
 <main>
-	<div id="site-firma" class="sector">
-		<div class="container">
+	<section id="site-firma" class="section-1">
+		<div class="container anim-2">
 		    <div class="row">
 		        <div class="col-xs-12 text-center">
 		            <p>Naszą główną działalnością jest sprzedaż produktów cyfrowych najbardziej znanych światowych marek takich jak LG, SAMSUNG, SONY i  SHARP.</p>
@@ -8,7 +8,7 @@
 		    </div>
 		</div>
 		<div class="container">
-		    <div class="row">
+		    <div class="row anim-3">
 		        <div class="col-xs-12 text-center">
 		 			<p>Specjalizujemy się w monitorach dotykowych  i wielkoformatowych.</p>
 		 			<p>W swojej ofercie posiadamy również telewizory, projektory, drukarki oraz zestawy kina domowego.</p>
@@ -17,39 +17,39 @@
 		    </div>
 		</div>
 		<div class="container">
-		    <div class="row">
+		    <div class="row anim-4">
 		        <div class="col-xs-12 text-center">
 					<p>Zainteresowanym zapewniamy fachowe dworactwo oraz montaż i konfiguracje urządzeń.</p>
 		        </div>
 		    </div>
 		</div>		
-	</div>		
-	<div id="site-oferta" class="sector sector-white">
-		<div class="container">
+	</section>		
+	<section id="site-oferta" class="section-2">
+		<div class="container anim-5">
 		    <div class="row">
 		        <div class="col-xs-12 text-center">
 					<h2>OFERTA</h2>
 		        </div>
 		    </div>
-		    <nav class="row">
-		        <div class="col-xs-6 col-sm-4 col-lg-2 text-center cursor-pointer" ng-class="{'download-element-active': activeOffer == 1}">
+		    <nav class="row oferta-nav">
+		        <div class="text-center cursor-pointer" ng-class="{'download-element-active': activeOffer == 1}">
 					<h3 class="download-element"><a href="/#/monitory">Monitory</a></h3>
 		        </div>
-		        <div class="col-xs-6 col-sm-4 col-lg-3 text-center cursor-pointer" ng-class="{'download-element-active': activeOffer == 2}">
+		        <div class="text-center cursor-pointer" ng-class="{'download-element-active': activeOffer == 2}">
 					<h3 class="download-element"><a href="/#/telewizory-i-kino-domowe">Telewizory i kino domowe</a></h3>
 		        </div>
-		        <div class="col-xs-6 col-sm-4 col-lg-2 text-center cursor-pointer" ng-class="{'download-element-active': activeOffer == 3}">
+		        <div class="text-center cursor-pointer" ng-class="{'download-element-active': activeOffer == 3}">
 					<h3 class="download-element"><a href="/#/telewizory-hotelowe">Telewizory hotelowe</a></h3>
 		        </div>
-		        <div class="col-xs-6 col-sm-6 col-lg-2 text-center cursor-pointer" ng-class="{'download-element-active': activeOffer == 4}">
+		        <div class="text-center cursor-pointer" ng-class="{'download-element-active': activeOffer == 4}">
 					<h3 class="download-element"><a href="/#/projektory">Projektory</a></h3>
 		        </div>
-		        <div class="col-xs-12 col-sm-6 col-lg-3 text-center cursor-pointer" ng-class="{'download-element-active': activeOffer == 5}">
+		        <div class="text-center cursor-pointer" ng-class="{'download-element-active': activeOffer == 5}">
 					<h3 class="download-element"><a href="/#/urzadzenia-wielofunkcyjne">Urządzenia wielofunkcyjne</a></h3>
 		        </div>
 		    </nav>
 		</div>		
-		<div ng-show="activeOffer == 1" class="container">
+		<div ng-show="activeOffer == 1" class="container anim-6">
 		    <div class="row">
 		    	<h4>W naszej ofercie dostępne są wszystkie monitory wielkoformatowe oraz dotykowe  LG, SAMSUNG, SHARP.</h4>
 		    </div>
@@ -81,7 +81,7 @@
 				<h4><a href="http://www.sharp.waw.pl" target="_blank" class="download-element">Więcej informacji</a></h4>
 		    </div>
 		</div>		
-		<div ng-show="activeOffer == 2" class="container">
+		<div ng-show="activeOffer == 2" class="container anim-6">
 		    <div class="row">
 				<h4>Telewizory konsumenckie dużych formatów:</h4>
 				<p>- Najnowsze modele telewizorów SHARP od 60” do 90”</p>
@@ -94,7 +94,7 @@
 				<h4><a href="http://www.sharp.waw.pl" target="_blank" class="download-element">Więcej informacji</a></h4>
 		    </div>
 		</div>		
-		<div ng-show="activeOffer == 3" class="container">
+		<div ng-show="activeOffer == 3" class="container anim-6">
 		    <div class="row">
 				<h4>Telewizory hotelowe to urządzenia preferowany dla hoteli, pensjonatów i akademików.</h4>
 		    </div>
@@ -118,7 +118,7 @@
 				<h4><a href="http://www.sharp.waw.pl" target="_blank" class="download-element">Więcej informacji</a></h4>
 		    </div>
 		</div>		
-		<div ng-show="activeOffer == 4" class="container">
+		<div ng-show="activeOffer == 4" class="container anim-6">
 		    <div class="row">
 				<h4>Dostępne są zarówno projektory DLP jak i LCD ze wszystkich segmentów cenowych - od tanich projektorów przenośnych, po zaawansowane projektory konferencyjne i najnowocześniejsze projektory o pełnej rozdzielczości High Definition.</h4>
 		    </div>
@@ -129,7 +129,7 @@
 				<h4><a href="http://www.sharp.waw.pl" target="_blank" class="download-element">Więcej informacji</a></h4>
 		    </div>
 		</div>		
-		<div ng-show="activeOffer == 5" class="container">
+		<div ng-show="activeOffer == 5" class="container anim-6">
 		    <div class="row">
 				<h4>Urządzenia wielofunkcyjne to wszystko co niezbędne do obsługi dokumentów i  pracy biura ale także do domu. W naszej ofercie otrzymają Państwo drukarki, kopiarki oraz skanery firm SHARP i SAMSUNG w najlepszych cenach.</h4>
 		    </div>
@@ -137,18 +137,18 @@
 				<h4><a href="http://www.sharp.waw.pl" target="_blank" class="download-element">Więcej informacji</a></h4>
 		    </div>
 		</div>		
-	</div>		
-	<div id="site-sklep" class="sector">
-		<div class="container">
+	</section>		
+	<section id="site-sklep" class="section-1">
+		<div class="container anim-7">
 		    <div class="row">
 		        <div class="col-xs-12 text-center">
 					<p><a href="http://www.sharp.waw.pl" target="_blank"><img src="img/www-sharp.jpg" alt="WWW Sharp"></a></p>
 		        </div>
 		    </div>
 		</div>		
-	</div>		
-	<div id="site-pobierz" class="sector sector-white">
-		<div class="container">
+	</section>		
+	<section id="site-pobierz" class="section-2">
+		<div class="container anim-8">
 		    <div class="row">
 		        <div class="col-xs-12 text-center">
 					<h2>POBIERZ</h2>
@@ -175,9 +175,9 @@
 		        </div>
 		    </div>
 		</div>		
-	</div>
-	<div id="site-kontakt" class="sector">
-		<div class="container">
+	</section>
+	<section id="site-kontakt" class="section-1">
+		<div class="container anim-9">
 		    <div class="row">
 		        <div class="col-xs-12 text-center">
 					<h2>WIZJOTECH</h2>
@@ -189,7 +189,7 @@
 		        </div>
 		    </div>
 		</div>
-		<div class="container">
+		<div class="container anim-A">
 		    <div class="row">
 		        <div class="col-xs-12 text-center">
 					<h3>TELEFONY</h3>
@@ -204,7 +204,7 @@
 		        </div>
 		    </div>
 		</div>
-		<div class="container">
+		<div class="container anim-B">
 		    <div class="row">
 		        <div class="col-xs-12 text-center">
 					<h3>E-MAIL</h3>
@@ -216,7 +216,7 @@
 		        </div>
 		    </div>
 		</div>
-		<div class="container">
+		<div class="container anim-C">
 		    <div class="row">
 		        <div class="col-xs-12 text-center">
 					<h3>STRONY WWW</h3>
@@ -234,5 +234,5 @@
 		        </div>
 		    </div>
 		</div>		
-	</div>		
+	</section>		
 </main>

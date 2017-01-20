@@ -43,11 +43,26 @@
 
         $scope.activeOffer = 0;
 
+        $scope.showWebsiteData = {
+            a1 : {mode: "FadeIn", selector: "header", stepTime: 500, delayTime: 0},
+            a2 : {mode: "FadeIn", selector: ".anim-2", stepTime: 500, delayTime: 0},
+            a3 : {mode: "FadeIn", selector: ".anim-3", stepTime: 500, delayTime: 0},
+            a4 : {mode: "FadeIn", selector: ".anim-4", stepTime: 500, delayTime: 0},
+            a5 : {mode: "FadeIn", selector: ".anim-5", stepTime: 500, delayTime: 0},
+            a6 : {mode: "FadeIn", selector: ".anim-6", stepTime: 500, delayTime: 0},
+            a7 : {mode: "FadeIn", selector: ".anim-7", stepTime: 500, delayTime: 0},
+            a8 : {mode: "FadeIn", selector: ".anim-8", stepTime: 500, delayTime: 0},
+            a9 : {mode: "FadeIn", selector: ".anim-9", stepTime: 500, delayTime: 0},
+            a10 : {mode: "FadeIn", selector: ".anim-A", stepTime: 500, delayTime: 0},
+            a11 : {mode: "FadeIn", selector: ".anim-B", stepTime: 500, delayTime: 0},
+            a12 : {mode: "FadeIn", selector: ".anim-C", stepTime: 500, delayTime: 0}
+        };
+
         $(window).load(function() {
-            $('#bg-image-2').hide();
-            $('#bg-image-3').hide();
-            $('.siteLoader').hide();
+
             mainService.StartTooltip();
+
+            $scope.SetLayout();
 
             $(window).scroll(function() {
 
@@ -55,24 +70,21 @@
                 var windowScrollTop = windowElement.scrollTop();
                 var siteOfertaTopOffset = $('#site-oferta').offset().top - windowScrollTop;
                 var sitePobierzTopOffset = $('#site-pobierz').offset().top - windowScrollTop;
-                var bgImage1 = $('#bg-image-1');
-                var bgImage2 = $('#bg-image-2');
-                var bgImage3 = $('#bg-image-3');
+                var bgImage= $('.bg-image');
 
                 if (sitePobierzTopOffset <= 0) {
-                    bgImage1.hide();
-                    bgImage2.hide();
-                    bgImage3.show();
+                    bgImage.attr('src', 'img/bg_'+3+'.jpg');
                 } else if (siteOfertaTopOffset <= 0) {
-                    bgImage1.hide();
-                    bgImage2.show();
-                    bgImage3.hide();
+                    bgImage.attr('src', 'img/bg_'+2+'.jpg');
                 } else {
-                    bgImage1.show();
-                    bgImage2.hide();
-                    bgImage3.hide();
+                    bgImage.attr('src', 'img/bg_'+1+'.jpg');
                 }
             });
+
+            $('.siteLoader').hide();
+
+            mainService.ShowWebsite($scope.showWebsiteData);
+
         });
 
         $( window ).resize(function() {
@@ -82,13 +94,29 @@
         $scope.OnWindowResize = function() {
             var width = $( window ).width();
             var height = $( window ).height();
+            var bgContainer = $('.bg-container');
             if ( width > (1280/800) * height ) {
-                $('.bg-image').width(width);
-                $('.bg-image').height(800 * width / 1280);
+                bgContainer.width(width);
+                bgContainer.height(800 * width / 1280);
+                var topOffset = (height - bgContainer.height()) / 2;
+                bgContainer.css({top:topOffset, left:0});
             } else {
-                $('.bg-image').height(height);
-                $('.bg-image').width(1280 * height / 800);
+                bgContainer.height(height);
+                bgContainer.width(1280 * height / 800);
+                var leftOffset = (width - bgContainer.width()) / 2;
+                bgContainer.css({top:0, left:leftOffset});
             } 
+        };
+
+        $scope.SetLayout = function() {
+            var sectionFirmaMinHeight = $( window ).height() - $('header').outerHeight();
+            $('#site-firma').css({'min-height': sectionFirmaMinHeight});
+        };
+
+        $scope.SetBG = function(numer) {
+            var bgImage= $('.bg-image');
+            var path = 'img/bg_'+numer+'.jpg';
+            bgImage.attr('src', path);
         };
 
         $scope.ScrollSite = function(sectorId) {
@@ -98,7 +126,7 @@
 
         $scope.OnWindowResize();
 
-    }]);
+    }]); 
 
     ////////////
     // OFERTA //
@@ -236,7 +264,7 @@
                 $(myTag).append(mySpan);
                 if (fade) {
                     mySpan.classList.add('animation-1');                    
-                }
+                } 
                 i++;
                 if (i >= myChars.length) {
                     clearInterval(myTimer);

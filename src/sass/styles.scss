@@ -16,8 +16,8 @@ html {
 body { 
 	font-family: 'Advent Pro', sans-serif;
 	color: $color-white;
-    font-size: 1.68rem; 	// = 14px
-    line-height: 2.6rem;
+    font-size: 2.4rem; 	// = 20px
+    line-height: 3.6rem;
     @include link-colors($color-wizjotech,$color-wizjotech,$color-light,$color-wizjotech);
     background-color: #000000;
 }
@@ -31,19 +31,19 @@ ul, ol {
 }
 
 h1 {
-	font-size: 2.6rem;
+	font-size: 3.6rem;
 }
 h2 {
 	font-weight: bold;
-    font-size: 2.4rem;
+    font-size: 3rem;
 }
 h3 {
 	font-weight: bold;
-    font-size: 1.80rem;
+    font-size: 2.4rem;
 }
 h4 {
 	font-weight: bolder;
-    font-size: 1.80rem;
+    font-size: 2.4rem;
 }
 
 li {
@@ -73,23 +73,30 @@ underline {
 	@include prefix(transform, rotate(270deg), webkit ms);
 }
 
-.sector
+section
 {
-	padding: 7% 0 7% 0;
+	min-height: 110vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 50px 0;
 }
- 
-.sector-white
+.section-2
 {
 	color: $color-black;
 	background-color: $color-white;
 }
+#site-oferta
+{
+	justify-content: flex-start;
+}
 
 .container {
-	padding: 20px 2%;
+	padding: 20px 5%;
 }
 
 .row {
-	padding: 20px 2%;
+	padding: 20px 0;
 }
 
 .cursor-pointer {
@@ -101,10 +108,18 @@ underline {
 	color: $color-wizjotech;
 	padding: 10px;
 }
+
+.oferta-nav
+{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
 .download-element
 {
-	line-height: 50px;
+	padding: 20px;
 	color: $color-wizjotech;
+	white-space: nowrap;
 }
 .download-element-active
 {
@@ -115,7 +130,11 @@ underline {
 {
 	z-index: -1;
 	position: fixed;
-	top: 0;
+	.bg-image
+	{
+		width: 100%;
+		height: 100%;
+	}
 }
 
 
