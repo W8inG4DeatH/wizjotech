@@ -41,9 +41,10 @@
  
     app.controller('myController', ['$rootScope', '$scope', '$http', '$window', '$location', '$anchorScroll', 'mainService', 'getWWWData', function($rootScope, $scope, $http, $window, $location, $anchorScroll, mainService, getWWWData) {
 
+        $scope.actualYear = new Date().getFullYear();
         $scope.activeOffer = 0;
 
-        $scope.showWebsiteData = {
+        $scope.showWebsiteData = { 
             a1 : {mode: "FadeIn", selector: "header", stepTime: 500, delayTime: 0},
             a2 : {mode: "FadeIn", selector: ".anim-2", stepTime: 500, delayTime: 0},
             a3 : {mode: "FadeIn", selector: ".anim-3", stepTime: 500, delayTime: 0},
